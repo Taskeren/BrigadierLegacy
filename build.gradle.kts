@@ -52,16 +52,17 @@ configurations.named(functionalTest.annotationProcessorConfigurationName).config
 
 tasks.register(functionalTest.jarTaskName, Jar::class.java) {
     from(functionalTest.output)
-    archiveClassifier.set("functionalTests")
+    archiveClassifier = "functionalTests"
     // we don't care about the version number here, keep it stable to avoid polluting the tmp directory
-    archiveVersion.set("1.0")
-    destinationDirectory.set(File(layout.buildDirectory.asFile.get(), "tmp"))
+    archiveVersion = "1.0"
+    destinationDirectory = File(layout.buildDirectory.asFile.get(), "tmp")
 }
 
 tasks.register("downgradeFunctionalTest", DowngradeJar::class.java) {
     inputFile = tasks.named<Jar>(functionalTest.jarTaskName, Jar::class.java).get().archiveFile
     downgradeTo = JavaVersion.VERSION_1_8
 
+    archiveVersion = "1.0"
     destinationDirectory = File(layout.buildDirectory.asFile.get(), "tmp")
     archiveClassifier = "downgraded-functionalTest"
 }
