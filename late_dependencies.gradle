@@ -1,4 +1,0 @@
-dependencies {
-    // Use BrigadierKt for testing
-    functionalTestImplementation("com.github.ElytraServers:BrigadierKt:1.0.0")
-}

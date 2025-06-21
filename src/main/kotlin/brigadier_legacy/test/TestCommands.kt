@@ -18,8 +18,8 @@ object TestCommands {
             literal("color") {
                 argument("colorValue", ColorArgumentType.color()) {
                     executesUnit { ctx ->
-                        val color by ctx.via(ColorArgumentType::getColor)
-                        ctx.source.sendMessage("The color you choose is: ${color}${color.friendlyName}")
+                        val colorValue by ctx.via(ColorArgumentType::getColor)
+                        ctx.source.sendMessage("The color you choose is: ${colorValue}${colorValue.friendlyName}")
                     }
                 }
             }
