@@ -1,0 +1,12 @@
+// Add any additional repositories for your dependencies here.
+
+repositories {
+    maven {
+        name = "Mojang Maven"
+        url = "https://libraries.minecraft.net"
+    }
+    maven {
+        name = "JitPack"
+        url = "https://jitpack.io"
+    }
+}
